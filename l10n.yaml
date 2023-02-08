@@ -1,0 +1,4 @@
+# Example: https://github.com/flutter/flutter/blob/master/dev/benchmarks/test_apps/stocks/l10n.yaml
+arb-dir: lib/config/l10n/arb
+template-arb-file: app_en.arb
+output-localization-file: app_localizations.dart
