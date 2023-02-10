@@ -11,13 +11,11 @@ class FeedList<T extends BaseFeedModel> extends StatelessWidget {
   final List<T> feedItems;
 
   Widget _constructListItem(BuildContext context, T post) {
-    if (listItemBuilder == null) {
-      return ListTile(
-        title: Text(post.title),
-        subtitle: Text(post.body),
-      );
-    }
-    return this.listItemBuilder!(context, post);
+    return this.listItemBuilder?.call(context, post) ??
+        ListTile(
+          title: Text(post.title),
+          subtitle: Text(post.body),
+        );
   }
 
   @override
