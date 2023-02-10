@@ -11,7 +11,6 @@ typedef ResponsiveLayoutWidgetBuilder = Widget Function(BuildContext, Widget?);
 /// various responsive breakpoints.
 /// {@endtemplate}
 class ResponsiveLayoutBuilder extends StatelessWidget {
-  /// {@macro responsive_layout_builder}
   const ResponsiveLayoutBuilder({
     Key? key,
     required this.small,
@@ -21,16 +20,12 @@ class ResponsiveLayoutBuilder extends StatelessWidget {
     this.child,
   }) : super(key: key);
 
-  /// [ResponsiveLayoutWidgetBuilder] for small layout.
   final ResponsiveLayoutWidgetBuilder small;
 
-  /// [ResponsiveLayoutWidgetBuilder] for medium layout.
   final ResponsiveLayoutWidgetBuilder? medium;
 
-  /// [ResponsiveLayoutWidgetBuilder] for large layout.
   final ResponsiveLayoutWidgetBuilder large;
 
-  /// [ResponsiveLayoutWidgetBuilder] for xLarge layout.
   final ResponsiveLayoutWidgetBuilder? xLarge;
 
   /// Optional child widget which will be passed

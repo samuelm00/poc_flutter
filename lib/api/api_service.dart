@@ -18,8 +18,6 @@ class ApiService {
     }
 
     final posts = jsonDecode(response.body) as List;
-    return posts.map((rawPost) {
-      return Post.fromJson(rawPost);
-    }).toList();
+    return posts.map((rawPost) => Post.fromJson(rawPost)).toList();
   }
 }

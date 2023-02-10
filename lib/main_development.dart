@@ -7,5 +7,5 @@ const buildFlavor = BuildFlavor.development;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await bootstrap(() => const App());
+  await bootstrap(() => const App(), buildFlavor);
 }

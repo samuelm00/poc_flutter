@@ -20,8 +20,6 @@ class _SecondScreenState extends State<SecondScreen> {
     AppLocalizations l10 = AppLocalizationsX(context).l10n;
     final ApiService apiService = getIt.get<ApiService>();
 
-    print(apiService.getPosts());
-
     final form = FormGroup({
       "email": FormControl<String>(validators: [
         Validators.required,
