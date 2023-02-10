@@ -39,7 +39,7 @@ class _PostFeedState extends State<PostFeed> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: FeedList<Post>(
-        posts: posts,
+        feedItems: posts,
         listItemBuilder: (context, post) => PostFeedItem(
           post: post,
         ),
