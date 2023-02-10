@@ -9,11 +9,36 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return ResponsiveLayoutBuilder(
+      small: (_, child) => AppFragment(
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
       ),
+      medium: (_, child) => AppFragment(
+        theme: ThemeData(
+          primarySwatch: Colors.red,
+        ),
+      ),
+      large: (_, child) => AppFragment(
+        theme: ThemeData(
+          primarySwatch: Colors.green,
+        ),
+      ),
+    );
+  }
+}
+
+class AppFragment extends StatelessWidget {
+  const AppFragment({super.key, this.theme, this.sharedLayoutBuilder});
+
+  final ResponsiveLayoutWidgetBuilder? sharedLayoutBuilder;
+  final ThemeData? theme;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      theme: theme,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -24,12 +49,13 @@ class App extends StatelessWidget {
         Locale("fr"),
         Locale("en"),
       ],
-      builder: (context, child) => ResponsiveLayoutBuilder(
-        small: (context, child) => child!,
-        large: (context, child) => child!,
-        child: child,
-      ),
       routerConfig: AppRouter.routerConfig(),
+      builder: (context, child) {
+        if (child == null) {
+          return const Placeholder();
+        }
+        return sharedLayoutBuilder?.call(context, child) ?? child;
+      },
     );
   }
 }

@@ -18,9 +18,14 @@ class _PostFeedState extends State<PostFeed> {
 
   getAndSetPosts() async {
     List<Post> _posts = await _apiService.getPosts();
-    setState(() {
-      posts = _posts;
-    });
+
+    // in the case where the widget is disposed before the async call is done
+    // we don't want to call setState
+    if (mounted) {
+      setState(() {
+        posts = _posts;
+      });
+    }
   }
 
   @override
