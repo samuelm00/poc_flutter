@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:poc/api/api_service.dart';
 import 'package:poc/api/models/post.dart';
 import 'package:poc/bootstrap.dart';
+import 'package:poc/features/posts/post_feed_item.dart';
 import 'package:poc/widgets/feed_list.dart';
 
 class PostFeed extends StatefulWidget {
@@ -13,10 +14,10 @@ class PostFeed extends StatefulWidget {
 
 class _PostFeedState extends State<PostFeed> {
   List<Post> posts = [];
-  final ApiService apiService = getIt.get<ApiService>();
+  final ApiService _apiService = getIt.get<ApiService>();
 
   getAndSetPosts() async {
-    List<Post> _posts = await apiService.getPosts();
+    List<Post> _posts = await _apiService.getPosts();
     setState(() {
       posts = _posts;
     });
@@ -30,17 +31,14 @@ class _PostFeedState extends State<PostFeed> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          'Post feed',
-          style: Theme.of(context).textTheme.headlineLarge,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: FeedList<Post>(
+        posts: posts,
+        listItemBuilder: (context, post) => PostFeedItem(
+          post: post,
         ),
-        const SizedBox(height: 20),
-        Expanded(
-          child: FeedList(posts: posts),
-        )
-      ],
+      ),
     );
   }
 }

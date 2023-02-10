@@ -5,12 +5,9 @@ typedef FeedListItemBuilder<T extends BaseFeedModel> = Widget Function(
     BuildContext, T);
 
 class FeedList<T extends BaseFeedModel> extends StatelessWidget {
-  FeedList(
-      {super.key,
-      FeedListItemBuilder<T>? listItemBuilder,
-      required this.posts});
+  const FeedList({super.key, this.listItemBuilder, required this.posts});
 
-  FeedListItemBuilder<T>? listItemBuilder;
+  final FeedListItemBuilder<T>? listItemBuilder;
   final List<T> posts;
 
   Widget _constructListItem(BuildContext context, T post) {
