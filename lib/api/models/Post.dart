@@ -1,15 +1,15 @@
-class Post {
+import 'package:poc/api/models/base.dart';
+
+class Post extends BaseFeedModel {
   final int id;
   final int userId;
-  final String title;
-  final String body;
 
   Post({
     required this.id,
     required this.userId,
-    required this.title,
-    required this.body,
-  });
+    required String title,
+    required String body,
+  }) : super(title: title, body: body);
 
   @override
   bool operator ==(Object other) =>

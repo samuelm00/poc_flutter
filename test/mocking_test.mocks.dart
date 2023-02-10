@@ -8,7 +8,7 @@ import 'dart:async' as _i5;
 import 'package:http/http.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:poc/api/api_service.dart' as _i4;
-import 'package:poc/api/models/Post.dart' as _i6;
+import 'package:poc/api/models/post.dart' as _i6;
 
 import 'mocking_test.dart' as _i3;
 

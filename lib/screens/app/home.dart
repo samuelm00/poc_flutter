@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:go_router/go_router.dart';
 import 'package:poc/config/l10n/l10n.dart';
-import 'package:poc/navigation/app_router/app_router.dart';
+import 'package:poc/features/posts/post_feed.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,19 +10,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     AppLocalizations l10 = AppLocalizationsX(context).l10n;
 
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(l10.home),
-          TextButton(
-            onPressed: () {
-              context.push(AppRouter.second);
-            },
-            child: Text("Go to second page"),
-          )
-        ],
-      ),
-    );
+    return const Padding(padding: EdgeInsets.all(8.0), child: PostFeed());
   }
 }

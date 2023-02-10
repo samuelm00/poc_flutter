@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
-import 'package:poc/api/models/Post.dart';
+import 'package:poc/api/models/post.dart';
 
 class ApiService {
   static const String _baseUrl = 'https://jsonplaceholder.typicode.com';

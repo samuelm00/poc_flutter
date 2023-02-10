@@ -9,7 +9,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:poc/api/api_service.dart';
-import 'package:poc/api/models/Post.dart';
+import 'package:poc/api/models/post.dart';
 import 'package:poc/bootstrap.dart';
 import 'package:poc/screens/second.dart';
 
