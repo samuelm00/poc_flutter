@@ -39,7 +39,7 @@ class _BottomNavigationWrapperState extends State<BottomNavigationWrapper> {
       bottomNavigationBar: BottomNavigationBar(
         items: widget.navigationItems,
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue[800],
+        selectedItemColor: Theme.of(context).primaryColor,
         onTap: _onTab,
       ),
     );

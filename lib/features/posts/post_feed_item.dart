@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poc/api/models/post.dart';
+import 'package:poc/config/layout/rounded_corners.dart';
 
 class PostFeedItem extends StatelessWidget {
   const PostFeedItem({super.key, required this.post});
@@ -10,6 +11,7 @@ class PostFeedItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
+      shape: RoundedCorners().shape,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListTile(
