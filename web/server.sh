@@ -1,11 +1,8 @@
 #!/bin/bash
 
-# Set the port
-PORT=3000
-
-# switch directories
-cd build/web/
+# get first argument
+PORT=$1
 
 # Start the server
 echo 'Server starting on port' $PORT '...'
-python3 -m http.server $PORT
+python3 -m http.server --directory build/web $PORT
