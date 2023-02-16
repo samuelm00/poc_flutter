@@ -1,35 +1,20 @@
-# Install Operating system and dependencies
-FROM ubuntu:20.04
+FROM ubuntu:latest
 
-ENV TZ=Europe/Rome
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ARG Environment=development
 
-RUN apt-get update 
-RUN apt-get install -y curl git wget unzip libgconf-2-4 gdb libstdc++6 libglu1-mesa fonts-droid-fallback lib32stdc++6 python3
-RUN apt-get clean
-
-# download Flutter SDK from Flutter Github repo
-RUN git clone https://github.com/flutter/flutter.git /usr/local/flutter
-
-# Set flutter environment path
+RUN apt-get update && \
+  apt-get install -y curl git wget unzip python3 python3-pip
+RUN git clone --depth=1 --branch=stable https://github.com/flutter/flutter.git /usr/local/flutter
 ENV PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
 
-# Run flutter doctor
-RUN flutter doctor
-
-# Enable flutter web
-RUN flutter channel master
-RUN flutter upgrade
+RUN flutter channel stable && flutter upgrade
 RUN flutter config --enable-web
 
 # Copy files to container and build
 RUN mkdir /app/
 COPY . /app/
 WORKDIR /app/
-RUN flutter build web
-
-# Record the exposed port
-EXPOSE 5000
+RUN flutter build web --target "lib/main_${Environment}.dart" --release
 
 # make server startup script executable and start the web server
 RUN ["chmod", "+x", "/app/web/server.sh"]

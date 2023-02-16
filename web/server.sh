@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # get first argument
-PORT=$1
+PORT=3000
 
 # Start the server
 echo 'Server starting on port' $PORT '...'
