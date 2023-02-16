@@ -10,6 +10,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     AppLocalizations l10 = AppLocalizationsX(context).l10n;
 
-    return const Padding(padding: EdgeInsets.all(8.0), child: PostFeed());
+    return const PostFeed();
   }
 }
