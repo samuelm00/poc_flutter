@@ -14,3 +14,13 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Dockerize Flutter Web
+
+```bash
+# build
+docker build -t flutter_web_poc .
+
+# run
+docker run -i -p 3000:3000 -td flutter_web_poc .
+```
