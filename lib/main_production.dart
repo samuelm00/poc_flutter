@@ -1,5 +1,5 @@
 import 'package:poc/app/app.dart';
-import 'package:poc/config/config.dart';
+import 'package:poc/config/build_flavor/build_flavor.dart';
 import 'package:poc/bootstrap.dart';
 import 'package:flutter/material.dart';
 
