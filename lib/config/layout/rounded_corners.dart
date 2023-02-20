@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 class RoundedCorners {
+  const RoundedCorners({this.radius = 8});
   final double radius;
 
-  RoundedCorners({this.radius = 8});
-
-  get shape => ShapeBorder.lerp(
+  ShapeBorder? shape() => ShapeBorder.lerp(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(radius),
         ),

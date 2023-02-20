@@ -9,6 +9,12 @@
 # packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
+analyzer:
+  exclude: [build/**]
+  language:
+    strict-casts: true
+    strict-raw-types: true
+
 linter:
   # The lint rules applied to this project can be customized in the
   # section below to disable rules from the `package:flutter_lints/flutter.yaml`
@@ -22,8 +28,23 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    avoid_print: true # Uncomment to disable the `avoid_print` rule
+    avoid_dynamic_calls: true # Uncomment to disable the `avoid_dynamic_calls` rule
+    avoid_empty_else: true # Uncomment to disable the `avoid_empty_else` rule
+    avoid_shadowing_type_parameters: true # Uncomment to disable the `avoid_shadowing_type_parameters` rule
+    use_decorated_box: true # Uncomment to disable the `use_decorated_box` rule
+    sort_constructors_first: true # Uncomment to disable the `sort_constructors_first` rule
+    prefer_iterable_whereType: true # Uncomment to disable the `prefer_iterable_whereType` rule
+    prefer_is_empty: true # Uncomment to disable the `prefer_is_empty` rule
+    prefer_foreach: true # Uncomment to disable the `prefer_foreach` rule
+    prefer_contains: true # Uncomment to disable the `prefer_contains` rule
+    null_check_on_nullable_type_parameter: true # Uncomment to disable the `null_check_on_nullable_type_parameter` rule
+    lines_longer_than_80_chars: true # Uncomment to disable the `lines_longer_than_80_chars` rule
+    file_names: true # Uncomment to disable the `file_names` rule
+    cancel_subscriptions: true # Uncomment to disable the `cancel_subscriptions` rule
+    no_duplicate_case_values: true # Uncomment to disable the `no_duplicate_case_values` rule
+    test_types_in_equals: true # Uncomment to disable the `test_types_in_equals` rule
+    await_only_futures: true # Uncomment to disable the `await_only_futures` rule
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

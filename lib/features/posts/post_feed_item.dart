@@ -11,7 +11,7 @@ class PostFeedItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedCorners().shape,
+      shape: const RoundedCorners().shape(),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListTile(

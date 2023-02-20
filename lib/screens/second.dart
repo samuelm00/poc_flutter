@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
-import 'package:poc/api/api_service.dart';
-import 'package:poc/config/get_it/get_it.dart';
-import 'package:poc/config/l10n/l10n.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class SecondScreen extends StatefulWidget {
@@ -17,9 +14,6 @@ class SecondScreen extends StatefulWidget {
 class _SecondScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
-    AppLocalizations l10 = AppLocalizationsX(context).l10n;
-    final ApiService apiService = getIt.get<ApiService>();
-
     final form = FormGroup({
       "email": FormControl<String>(validators: [
         Validators.required,

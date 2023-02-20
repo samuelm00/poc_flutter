@@ -4,10 +4,9 @@ import 'package:http/http.dart';
 import 'package:poc/api/models/post.dart';
 
 class ApiService {
+  const ApiService({required this.httpClient});
   static const String _baseUrl = 'https://jsonplaceholder.typicode.com';
   final Client httpClient;
-
-  ApiService({required this.httpClient});
 
   Future<List<Post>> getPosts() async {
     const url = '$_baseUrl/posts';
@@ -18,6 +17,8 @@ class ApiService {
     }
 
     final posts = jsonDecode(response.body) as List;
-    return posts.map((rawPost) => Post.fromJson(rawPost)).toList();
+    return posts
+        .map((rawPost) => Post.fromJson(rawPost as Map<String, dynamic>))
+        .toList();
   }
 }

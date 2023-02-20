@@ -10,7 +10,7 @@ class AppRouter {
   static const String home = '/';
   static const String second = '/second';
 
-  static routerConfig() {
+  static GoRouter routerConfig() {
     return GoRouter(
       routes: [
         GoRoute(

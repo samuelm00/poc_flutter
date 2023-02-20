@@ -10,7 +10,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:poc/api/api_service.dart';
 import 'package:poc/api/models/post.dart';
-import 'package:poc/bootstrap.dart';
+import 'package:poc/config/get_it/get_it.dart';
 import 'package:poc/screens/second.dart';
 
 import 'mocking_test.mocks.dart';
