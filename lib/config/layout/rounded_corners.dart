@@ -4,7 +4,7 @@ class RoundedCorners {
   const RoundedCorners({this.radius = 8});
   final double radius;
 
-  ShapeBorder? shape() => ShapeBorder.lerp(
+  ShapeBorder? get shape => ShapeBorder.lerp(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(radius),
         ),
