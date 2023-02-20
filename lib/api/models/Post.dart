@@ -21,6 +21,7 @@ class Post extends BaseFeedModel {
           title == other.title &&
           body == other.body;
 
+  @override
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
       id: json['id'] as int,

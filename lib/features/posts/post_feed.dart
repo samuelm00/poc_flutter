@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poc/api/api_service.dart';
 import 'package:poc/api/models/post.dart';
-import 'package:poc/bootstrap.dart';
+import 'package:poc/config/get_it/get_it.dart';
 import 'package:poc/features/posts/post_feed_item.dart';
 import 'package:poc/widgets/feed_list.dart';
 

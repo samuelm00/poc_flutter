@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:poc/api/api_service.dart';
-import 'package:poc/bootstrap.dart';
+import 'package:poc/config/get_it/get_it.dart';
 import 'package:poc/config/l10n/l10n.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
